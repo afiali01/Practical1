@@ -1,0 +1,37 @@
+@use 'reboot';
+
+body{
+    width: 480px;
+    margin: 0 auto;
+}
+
+svg{
+    padding: 4rem;
+    color: purple;
+}
+
+.todo-header{
+    border: 2px solid teal;
+}
+
+#app{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+a{
+    background-color: teal;
+    text-decoration: none;
+    color: yellowgreen;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+

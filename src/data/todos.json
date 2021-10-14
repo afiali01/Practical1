@@ -1,0 +1,57 @@
+[
+    {
+        "id":"1",
+        "category":"School",
+        "title":"Finish homework",
+        "isComplete":false,
+        "startDate":"Wednesday October 20",
+        "startTime":"9:00am",
+        "endDate":"Thursday October 21",
+        "endTime":"9:00am"
+    },
+
+    {
+        "id":"2",
+        "category":"Friends",
+        "title":"Pick friends for bowling",
+        "isComplete":false,
+        "startDate":"Saturday October 23",
+        "startTime":"6:00pm",
+        "endDate":"Saturday October 23",
+        "endTime":"7:00pm"
+    },
+
+    {
+        "id":"3",
+        "category":"Sports",
+        "title":"Practice in the fitness center",
+        "isComplete":false,
+        "startDate":"Wednesday October 20",
+        "startTime":"3:30pm",
+        "endDate":"Wednesday October 20",
+        "endTime":"5:30pm"
+    },
+
+    {
+        "id":"4",
+        "category":"Health",
+        "title":"Dentist Appointment",
+        "isComplete":false,
+        "startDate":"Friday October 22",
+        "startTime":"4:00pm",
+        "endDate":"Friday October 22",
+        "endTime":"5:00pm"
+    },
+
+    {
+        "id":"5",
+        "category":"Personal",
+        "title":"Pick up groceries",
+        "isComplete":false,
+        "startDate":"Sunday October 24",
+        "startTime":"11:00am",
+        "endDate":"Sunday October 24",
+        "endTime":"11:00am"
+    }
+
+]
