@@ -10,7 +10,7 @@ fa-w-18 fa-9x"><path fill="currentColor" d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10
 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 
 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z" class=""></path></svg>`
 
-const editButton = function(label, className = 'editButton'){
+const editButton = function(label='edit', className = 'editButton'){
     const template = `<button class="${className}">${label}</button>`
     const element = makeElement(template);
     return element

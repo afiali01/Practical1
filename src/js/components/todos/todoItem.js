@@ -1,27 +1,24 @@
-import {editButton, deleteButton} from "../buttons/button"
+import editButton from "../buttons/editButton";
+import deleteButton from "../buttons/deleteButton";
 
 
 
 const todoItem = function(data){
-    
-    for(i=0; i < length(data); i++){
-        const template = `
+    const template = `
         <div class = "todoItem">
             <div class = "item-data">
-                <h3>${data.category}</h3>
-                <p>${data.title}</p>
-                <p>${data.endDate}</p>
-                <p>${data.endTime}</p>
-            </div>
-            <div class = "buttons">
-                ${editButton}
-                ${deleteButton}
-            </div>
+                <h3>school</h3>
+                <p>Finish homework</p>
+                <p>THursday, Oct 14</p>
+                <p>6:00pm</p>
+            </div> 
+            <div class = "buttons">` + 
+                editButton() + deleteButton()+
+            `</div>
         </div>
         `
-    }
-
     document.body.innerHTML = template
+    return template
 }
 
 export default todoItem

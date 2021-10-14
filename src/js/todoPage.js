@@ -3,13 +3,14 @@ import tagline from "./components/header/tagline"
 import makeElement from "./utils/makeElement"
 import todoList from "./components/todos/todoList"
 
+const app = document.querySelector('#app')
+
 const todoPage= function(){
-    const todoListPage = todoHeader()
-    return todoListPage
+    const page = combineHeadBody()
+    return page
 }
 
 const todoHeader = function(params){
-    const app = document.querySelector('#app')
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo-header')
     todoDiv.appendChild(makeElement(logo()))
@@ -19,10 +20,19 @@ const todoHeader = function(params){
 }
 
 const todos = function(params){
-    const app = document.querySelector('#app')
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo-list')
+    todoDiv.appendChild(todoList())
     app.appendChild(todoDiv)
+    return app
+}
+
+const combineHeadBody = function(){
+    const toDosHeader = todoHeader()
+    const todosBody = todos()
+    const app = document.querySelector('#app')
+    app.appendChild(toDosHeader)
+    app.appendChild(todosBody)
     return app
 }
 
