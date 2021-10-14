@@ -7,11 +7,21 @@ import dataFetcher from "../../utils/dataFetcher";
 
 const todoItem = function(){
     let todoData = dataFetcher()
-    let item = document.createElement('li')
-    item.innerHTML = todoData[0]
+    let item = document.createElement('div')
+    item.classList.add('todo-data')
+    console.log(todoData)
+    var output = 
+    `
+        <li>${todoData.length}</li>
+    `
+    item.innerHTML = output
     
     return item
 
 }
+
+{/* <li>${todoData[0].title}</li>
+<li>${todoData[0].endDate}</li>
+<li>${todoData[0].endTime}</li> */}
 
 export default todoItem
