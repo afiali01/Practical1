@@ -15,16 +15,16 @@ const todoHeader = function(params){
     todoDiv.classList.add('todo-header')
     todoDiv.appendChild(makeElement(logo()))
     todoDiv.appendChild(makeElement(tagline('The ultimate to do list')))
-    app.appendChild(todoDiv)
-    return app
+    // app.appendChild(todoDiv)
+    return todoDiv
 }
 
 const todos = function(params){
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo-list')
     todoDiv.appendChild(todoList())
-    app.appendChild(todoDiv)
-    return app
+    // app.appendChild(todoDiv)
+    return todoDiv
 }
 
 const combineHeadBody = function(){

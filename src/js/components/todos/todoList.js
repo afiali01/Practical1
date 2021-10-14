@@ -3,20 +3,10 @@ import todoItem from "./todoItem";
 
 const todoList = function(){
     const list = document.createElement('div')
-    list.classList.add('todo-list')
-    list.appendChild(makeElement(todoItem()))
-    
+    list.classList.add('list-items')
+    //make multiple items
+    list.appendChild(todoItem())
     return list
 }
 
 export default todoList
-
-// let dataStore;
-
-//     fetch('https://raw.githubusercontent.com/afiali01/Practical1/main/todos.json')
-//     .then(res => res.json())
-//     .then(data => {
-//         dataStore = [...data]
-//     })
-//     .catch(err => console.log(err))
-//     console.log(dataStore)

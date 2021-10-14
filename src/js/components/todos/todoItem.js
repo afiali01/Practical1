@@ -1,24 +1,17 @@
 import editButton from "../buttons/editButton";
 import deleteButton from "../buttons/deleteButton";
+import makeElement from "../../utils/makeElement";
+import dataFetcher from "../../utils/dataFetcher";
 
+//make one item
 
+const todoItem = function(){
+    let todoData = dataFetcher()
+    let item = document.createElement('li')
+    item.innerHTML = todoData[0]
+    
+    return item
 
-const todoItem = function(data){
-    const template = `
-        <div class = "todoItem">
-            <div class = "item-data">
-                <h3>school</h3>
-                <p>Finish homework</p>
-                <p>THursday, Oct 14</p>
-                <p>6:00pm</p>
-            </div> 
-            <div class = "buttons">` + 
-                editButton() + deleteButton()+
-            `</div>
-        </div>
-        `
-    document.body.innerHTML = template
-    return template
 }
 
 export default todoItem
