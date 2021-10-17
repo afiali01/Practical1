@@ -1,12 +1,13 @@
 
+
 const dataFetcher = async function(){
-    const dataStore = [];
-    const response  = await fetch('https://raw.githubusercontent.com/afiali01/Practical1/main/todos.json')
+    const url = 'https://raw.githubusercontent.com/afiali01/Practical1/main/todos.json'
+    console.log(url)
+    const response = await fetch(url);
+    console.log(response)
     const data = await response.json();
-    for(i=0; i<5; i++){
-        dataStore[i] = data[i]
-    }
-    return dataStore
+    console.log(data)
+    return data
 }
 
 export default dataFetcher

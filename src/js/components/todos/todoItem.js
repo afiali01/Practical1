@@ -5,14 +5,14 @@ import dataFetcher from "../../utils/dataFetcher";
 
 //make one item
 
-const todoItem = function(){
+const todoItem = function(id){
     let todoData = dataFetcher()
+    console.log(todoData)
     let item = document.createElement('div')
     item.classList.add('todo-data')
-    console.log(todoData)
     var output = 
     `
-        <li>${todoData.length}</li>
+        <li>${todoData[id]}</li>
     `
     item.innerHTML = output
     
