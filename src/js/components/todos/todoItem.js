@@ -5,8 +5,8 @@ import dataFetcher from "../../utils/dataFetcher";
 
 //make one item
 
-const todoItem = function(id){
-    let todoData = dataFetcher()
+const todoItem = async function(id){
+    let todoData = await dataFetcher()
     console.log(todoData)
     let item = document.createElement('div')
     item.classList.add('todo-data')
