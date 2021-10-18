@@ -7,14 +7,23 @@ import dataFetcher from "../../utils/dataFetcher";
 
 const todoItem = async function(id){
     let todoData = await dataFetcher()
-    console.log(todoData)
     let item = document.createElement('div')
     item.classList.add('todo-data')
-    var output = 
-    `
-        <li>${todoData[id]}</li>
-    `
-    item.innerHTML = output
+
+    let title = document.createElement('li')
+    title.textContent = todoData[id]
+    let category = document.createElement('li')
+    category.textContent = todoData[id]
+    let endDate = document.createElement('li')
+    endDate.textContent = todoData[id]
+    let endTime = document.createElement('li')
+    endTime.textContent = todoData[id]
+
+    item.appendChild(title)
+    item.appendChild(category)
+    item.appendChild(endDate)
+    item.appendChild(endTime)
+
     
     return item
 
