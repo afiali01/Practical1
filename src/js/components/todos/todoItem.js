@@ -10,14 +10,14 @@ const todoItem = async function(id){
     let item = document.createElement('div')
     item.classList.add('todo-data')
 
-    let title = document.createElement('li')
-    title.textContent = todoData[id]
-    let category = document.createElement('li')
-    category.textContent = todoData[id]
-    let endDate = document.createElement('li')
-    endDate.textContent = todoData[id]
-    let endTime = document.createElement('li')
-    endTime.textContent = todoData[id]
+    let desc = document.createElement('li')
+    desc.textContent = todoData[id].title
+    let cat = document.createElement('li')
+    cat.textContent = todoData[id].category
+    let date = document.createElement('li')
+    date.textContent = todoData[id].endDate
+    let time = document.createElement('li')
+    time.textContent = todoData[id].endTime
 
     item.appendChild(title)
     item.appendChild(category)
@@ -28,9 +28,5 @@ const todoItem = async function(id){
     return item
 
 }
-
-{/* <li>${todoData[0].title}</li>
-<li>${todoData[0].endDate}</li>
-<li>${todoData[0].endTime}</li> */}
 
 export default todoItem
