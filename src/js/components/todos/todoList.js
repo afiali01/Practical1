@@ -8,8 +8,7 @@ const todoList = function(){
     list.classList.add('list-items')
     //make multiple items
     list.appendChild(makeElement(todoItem(0)))
-    // list.appendChild(editButton)
-    // list.appendChild(deleteButton)
+    
     return list
 }
 
