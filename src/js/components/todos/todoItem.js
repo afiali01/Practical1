@@ -1,5 +1,3 @@
-import editButton from "../buttons/editButton";
-import deleteButton from "../buttons/deleteButton";
 import makeElement from "../../utils/makeElement";
 import dataFetcher from "../../utils/dataFetcher";
 
@@ -19,10 +17,10 @@ const todoItem = async function(id){
     let time = document.createElement('li')
     time.textContent = todoData[id].endTime
 
-    item.appendChild(title)
-    item.appendChild(category)
-    item.appendChild(endDate)
-    item.appendChild(endTime)
+    item.appendChild(desc)
+    item.appendChild(cat)
+    item.appendChild(date)
+    item.appendChild(time)
 
     
     return item
