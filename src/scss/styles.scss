@@ -33,7 +33,7 @@ a{
     border-radius: 5px;
 }
 
-.list-items{
+.item{
     border: 2px solid teal;
     margin: 1rem 0;
     display: flex;
@@ -52,7 +52,7 @@ button{
     margin-bottom: 1rem;
 }
 
-.todo-data li{
+.data li{
     list-style: none ;
     text-align: start;
     

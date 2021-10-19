@@ -8,8 +8,8 @@
   "default": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html"
+    "start": "npx gulp && npx parcel src/index.html",
+    "build": "npx gulp && npx parcel build src/index.html"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "sass": "^1.40.1"
   },
   "dependencies": {
+    "gulp": "^4.0.2",
     "lodash": "^4.17.21"
   }
 }

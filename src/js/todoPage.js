@@ -4,39 +4,31 @@ import makeElement from "./utils/makeElement"
 import todoList from "./components/todos/todoList"
 import appBar from "./components/todos/appBar"
 
-const app = document.querySelector('#app')
 
-const todoPage= function(){
-    const page = combineHeadBody()
-    return page
-}
 
-const todoHeader = function(params){
-    const todoDiv = document.createElement('div')
-    todoDiv.classList.add('todo-header')
-    todoDiv.appendChild(makeElement(logo()))
-    todoDiv.appendChild(makeElement(tagline('The ultimate to do list')))
-    // app.appendChild(todoDiv)
-    return todoDiv
-}
+const page = async function(){
+    const app = document.querySelector('#app')
 
-const todos = function(params){
+    //header
+    const todoHeaderDiv = document.createElement('div')
+    todoHeaderDiv.classList.add('todo-header')
+    todoHeaderDiv.appendChild(makeElement(logo()))
+    todoHeaderDiv.appendChild(makeElement(tagline('The ultimate to do list')))
+
+    //todo list
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo-list')
-    todoDiv.appendChild(todoList())
-    // app.appendChild(todoDiv)
-    return todoDiv
-}
-
-const combineHeadBody = function(){
-    const toDosHeader = todoHeader()
-    const todosBody = todos()
+    const list = await todoList()
+    console.log(list)
+    todoDiv.appendChild(list)
+    // app bar
     const appBarComponent = appBar() 
-    const app = document.querySelector('#app')
-    app.appendChild(toDosHeader)
-    app.appendChild(todosBody)
+
+    app.appendChild(todoHeaderDiv)
+    app.appendChild(todoDiv)
     app.appendChild(appBarComponent)
+
     return app
 }
 
-export default todoPage
+export default page
