@@ -9,22 +9,16 @@ import { divide } from "lodash";
 const todoItem = function(data) {
     var edit = editButton()
     var deleteBtn = deleteButton()
+
+    //item div
     let item = document.createElement('div')
     item.classList.add('item')
-    // var output = `
-        
-    //         <div class="data">
-    //             <li>${data.title}</li>
-    //             <li>${data.category}</li>
-    //             <li>${data.endDate}</li>
-    //             <li>${data.endTime}</li>
-    //             <li = class="completed">${data.isComplete}</li>
-    //         </div>
-        
-    // `
+    
+    //data div
     let dataDiv = document.createElement('div')
     dataDiv.classList.add('data')
 
+    //extract infomation from data
     let desc = document.createElement('li')
     desc.innerHTML = data.title
     let cat = document.createElement('li')
@@ -41,6 +35,7 @@ const todoItem = function(data) {
     dataDiv.appendChild(date)
     dataDiv.appendChild(time)
     dataDiv.appendChild(finished)
+
     //buttons
     const buttons = document.createElement('div')
     buttons.classList.add('buttons')
@@ -52,12 +47,5 @@ const todoItem = function(data) {
     
     return item
 }
-
-{/* <div class="buttons">
-                ${editButton}
-                ${deleteButton}
-            </div> */}
-
-
 
 export default todoItem
