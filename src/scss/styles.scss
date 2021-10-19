@@ -10,13 +10,9 @@ svg{
     color: purple;
 }
 
-.todo-header{
-    border: 2px solid teal;
-}
 
 #app{
     text-align: center;
-    margin: 2rem 0;
 }
 
 h2{
@@ -25,12 +21,53 @@ h2{
     margin-bottom: 1rem;
 }
 
+.todo-header{
+    background-color: teal;
+}
+
 a{
     background-color: teal;
     text-decoration: none;
     color: yellowgreen;
     padding: 1rem;
     border-radius: 5px;
+}
+
+.list-items{
+    border: 2px solid teal;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.buttons{
+    flex:wrap;
+}
+
+button{
+    width: 100%;
+    background-color: purple;
+    color: yellowgreen;
+    margin-bottom: 1rem;
+}
+
+.todo-data li{
+    list-style: none ;
+    text-align: start;
+    
+}
+
+.completed{
+    color: green;
+}
+
+.appBar{
+    background: teal;
+    padding-top: 1rem;
+}
+.appBar button{
+    width: 25%;
 }
 
 

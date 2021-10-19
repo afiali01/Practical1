@@ -2,6 +2,7 @@ import logo from "./components/header/logo"
 import tagline from "./components/header/tagline"
 import makeElement from "./utils/makeElement"
 import todoList from "./components/todos/todoList"
+import appBar from "./components/todos/appBar"
 
 const app = document.querySelector('#app')
 
@@ -30,9 +31,11 @@ const todos = function(params){
 const combineHeadBody = function(){
     const toDosHeader = todoHeader()
     const todosBody = todos()
+    const appBarComponent = appBar() 
     const app = document.querySelector('#app')
     app.appendChild(toDosHeader)
     app.appendChild(todosBody)
+    app.appendChild(appBarComponent)
     return app
 }
 

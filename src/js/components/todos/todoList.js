@@ -7,7 +7,15 @@ const todoList = function(){
     const list = document.createElement('div')
     list.classList.add('list-items')
     //make multiple items
-    list.appendChild(makeElement(todoItem(0)))
+    list.appendChild(todoItem(0))
+
+    const buttons = document.createElement('div')
+    buttons.classList.add('buttons')
+    buttons.appendChild(editButton())
+    buttons.appendChild(deleteButton())
+
+    list.appendChild(buttons)
+
     
     return list
 }
