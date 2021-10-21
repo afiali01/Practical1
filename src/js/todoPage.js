@@ -6,7 +6,7 @@ import appBar from "./components/todos/appBar"
 
 
 
-const page = async function(){
+const todoPage = async function(){
     const app = document.querySelector('#app')
 
     //header
@@ -31,4 +31,4 @@ const page = async function(){
     return app
 }
 
-export default page
+export default todoPage

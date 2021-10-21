@@ -2,7 +2,6 @@ import makeElement from "../../utils/makeElement";
 import dataFetcher from "../../utils/dataFetcher";
 import editButton from "../buttons/editButton";
 import deleteButton from "../buttons/deleteButton";
-import { divide } from "lodash";
 
 //make one 
 

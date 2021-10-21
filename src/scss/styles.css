@@ -432,6 +432,11 @@ h2 {
   background-color: teal;
 }
 
+.warning h1 {
+  font-size: 3rem;
+  padding: 1rem 0 2rem 0;
+}
+
 a {
   background-color: teal;
   text-decoration: none;
