@@ -4,12 +4,14 @@ import link from "./link";
 import makeElement from "../../utils/makeElement";
 
 const headerPage = function(params){
-    const app = document.querySelector('#app')
-    app.appendChild(makeElement(logo()))
-    app.appendChild(makeElement(tagline('The ultimate to do list')))
-    app.appendChild(makeElement(link('To Do List App', '/todoPage')))
-
-    return app
+    
+    const header = document.createElement('header')
+    header.classList.add('home-header')
+    header.appendChild(makeElement(logo()))
+    header.appendChild(makeElement(tagline('The ultimate to do list')))
+    header.appendChild(makeElement(link('To Do List App', '/todoPage')))
+    
+    return header
 }
 
 export default headerPage
