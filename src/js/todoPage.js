@@ -19,7 +19,6 @@ const todoPage = async function(){
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo-list')
     const list = await todoList()
-    console.log(list)
     todoDiv.appendChild(list)
     // app bar
     const appBarComponent = appBar() 

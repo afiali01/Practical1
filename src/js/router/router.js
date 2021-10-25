@@ -24,7 +24,7 @@ const Router = function(pathname){
         app.appendChild(notFound())
     }
     else{
-        // app.appendChild(routes[window.location.pathname]())
+        // app.appendChild(routes[window.location.pathname](pathname))
         app.appendChild(routes[isValidRoute]())
     }
 }
