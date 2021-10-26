@@ -7,9 +7,14 @@ const routes = {
     "/todoPage": todoPage
 }
 
-const Router = function(pathname){
+const Router =  function (pathname)   {
     const isValidRoute = Object.keys(routes).find(key => key===pathname)
+    
+     // check the pathname agains the router object
+     // if path is valid display the component page
+     // if not display the not found page.
 
+    // loading and unloading pages into the div app
     const app = document.querySelector('#app')
     app.innerHTML = ''
 
@@ -20,13 +25,14 @@ const Router = function(pathname){
     )
     
 
-    if(isValidRoute === undefined){
-        app.appendChild(notFound())
-    }
-    else{
-        // app.appendChild(routes[window.location.pathname](pathname))
-        app.appendChild(routes[isValidRoute]())
-    }
+        // app.appendChild(routes[window.location.pathname]())
+        if(isValidRoute === undefined){
+            app.appendChild(notFound())
+        }
+        else{
+            app.append(routes[window.location.pathname]())
+            //app.append(routes[isValidRoute]())
+        }
 }
 
 export default Router

@@ -6,8 +6,8 @@ import appBar from "./components/todos/appBar"
 
 
 
-const todoPage = async function(){
-    const app = document.querySelector('#app')
+const todoPage = function(){
+    const app = document.createElement('div')
 
     //header
     const todoHeaderDiv = document.createElement('div')
@@ -18,7 +18,7 @@ const todoPage = async function(){
     //todo list
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo-list')
-    const list = await todoList()
+    const list = todoList()
     todoDiv.appendChild(list)
     // app bar
     const appBarComponent = appBar() 
