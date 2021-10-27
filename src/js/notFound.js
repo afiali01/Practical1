@@ -9,7 +9,7 @@ const notFound = function(){
         </header>
     `
     const pageHeader = makeElement(headerTemplate)
-    const homeLink = link("To Do List App", "/todoPage")
+    const homeLink = link("To Do List App", "/todopage")
 
     pageHeader.append(makeElement(homeLink))
     page.append(pageHeader)

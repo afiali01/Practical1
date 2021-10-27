@@ -9,7 +9,7 @@ const headerPage = function(params){
     header.classList.add('home-header')
     header.appendChild(makeElement(logo()))
     header.appendChild(makeElement(tagline('The ultimate to do list')))
-    header.appendChild(makeElement(link('To Do List App', '/todoPage')))
+    header.appendChild(makeElement(link('To Do List App', '/todopage')))
     
     return header
 }
