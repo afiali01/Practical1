@@ -27,7 +27,14 @@ const todoItem = function(data) {
     let time = document.createElement('li')
     time.innerHTML = data.endTime
     let finished = document.createElement('li')
-    finished.innerHTML = data.isComplete
+    finished.innerHTML = (data.isComplete === false ? "Not Completed" : "Completed")
+
+    if(finished.innerHTML === "Not Completed"){
+        finished.classList.add('not-completed')
+    }else{
+        finished.classList.add('completed')
+    }
+
 
     dataDiv.appendChild(desc)
     dataDiv.appendChild(cat)

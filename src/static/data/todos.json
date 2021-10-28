@@ -42,7 +42,7 @@
     {
         "category":"Personal",
         "title":"Pick up groceries",
-        "isComplete":false,
+        "isComplete":true,
         "startDate":"Sunday October 24",
         "startTime":"11:00am",
         "endDate":"Sunday October 24",

@@ -476,6 +476,10 @@ button {
   text-align: start;
 }
 
+.not-completed {
+  color: red;
+}
+
 .completed {
   color: green;
 }
