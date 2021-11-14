@@ -1,4 +1,4 @@
-import addComponent from "../buttons/button"
+import addComponent from "../buttons/addButton"
 
 const  appBar = function(){
     const div = document.createElement('div')

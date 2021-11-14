@@ -1,10 +1,10 @@
 import makeElement from "../../utils/makeElement"
 
-const addComponent= function(label = 'Add Todo', className = 'addButton'){
-    const template = `<button class="${className}">${label}</button>`
+const button= function(label){
+    const template = `<button >${label}</button>`
     const element = makeElement(template);
 
     return element
 }
 
-export default addComponent
+export default button
