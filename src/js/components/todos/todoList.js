@@ -17,6 +17,12 @@ const todoList = function(){
         const todoID = {id:e.currentTarget.dataset.key}
         Router('/deletepage', todoID)
     }
+
+    function onEditTodo(e){
+        const id = e.currentTarget.dataset.key
+        const todoObject = data.find(todo => todo.id === id)
+        Router('/editpage',todoObject)
+    }
     
 
     //append child into list
@@ -29,6 +35,7 @@ const todoList = function(){
         const elements = data.map(elm => todoItem(elm))
         elements.forEach(element => {
             element.querySelector('#deleteButton').addEventListener('click', onDeleteToDo)
+            element.querySelector('#editButton').addEventListener('click', onEditTodo)
             list.append(element)
         });
     }
