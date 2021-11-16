@@ -1,0 +1,17 @@
+.editHeader{
+    background-color: teal;
+    h1{
+        font-size: 3rem;
+
+    }
+}
+
+.edit{
+    border: 1px solid teal;
+
+    div:last-child{
+        display: flex;
+        justify-content: space-around;
+        margin: 1rem;
+    }
+}

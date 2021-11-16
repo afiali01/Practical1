@@ -1,4 +1,4 @@
-import makeElement from "../../utils/makeElement";
+import makeElement from "./../../utils/makeElement";
 import todoItem from "./todoItem";
 import editButton from "../buttons/editButton";
 import deleteButton from "../buttons/deleteButton";

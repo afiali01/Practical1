@@ -1,8 +1,9 @@
-import makeElement from "./utils/makeElement"
-import button from "./components/buttons/button"
-import Router from "./router/router"
-import { getStore } from "./redux/store"
-import reducer from "./redux/reducer"
+import makeElement from "./../../utils/makeElement"
+import button from "./../../components/buttons/button"
+import Router from "./../../router/router"
+import { getStore } from "./../../redux/store"
+import reducer from "./../../redux/reducer"
+import styles from "./styles.module.scss"
 
 
 const cancelButton = button("cancel")
@@ -32,17 +33,47 @@ console.log(todoData)
     }
 
     let editHeader = `
-        <header>
+        <header class="${styles.editHeader}">
             <h1>Edit Todo</h1>
         </header>
     `
     let editTemplate = 
     `
-        <form>
+        <form class="${styles.edit}">
             <div>
                 <label>
                     Title
                     <input type="text"/>
+                </label>
+
+                <label>
+                    Category
+                    <input type="text"/>
+                </label>
+
+                <label>
+                    Start Date
+                    <input type="date"/>
+                </label>
+
+                <label>
+                    Start Time
+                    <input type="text"/>
+                </label>
+
+                <label>
+                    End Date
+                    <input type="date"/>
+                </label>
+
+                <label>
+                    End Time
+                    <input type="text"/>
+                </label>
+
+                <label>
+                    Complete
+                    <input type="checkbox"/>
                 </label>
             </div>
             <div id="button"></div>

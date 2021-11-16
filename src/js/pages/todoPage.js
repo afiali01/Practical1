@@ -1,8 +1,8 @@
-import logo from "./components/header/logo"
-import tagline from "./components/header/tagline"
-import makeElement from "./utils/makeElement"
-import todoList from "./components/todos/todoList"
-import appBar from "./components/todos/appBar"
+import logo from "./../components/header/logo"
+import tagline from "./../components/header/tagline"
+import makeElement from "./../utils/makeElement"
+import todoList from "./../components/todos/todoList"
+import appBar from "./../components/todos/appBar"
 
 
 

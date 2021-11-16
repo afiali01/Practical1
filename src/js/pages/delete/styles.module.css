@@ -1,0 +1,17 @@
+.delete {
+  background-color: teal;
+}
+.delete h1 {
+  font-size: 3rem;
+}
+.delete div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.delete button {
+  margin: 1rem;
+}
+/*# sourceMappingURL=styles.module.css.map */

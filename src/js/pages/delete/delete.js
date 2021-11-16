@@ -1,9 +1,10 @@
-import deleteButton from "./components/buttons/deleteButton"
-import button from "./components/buttons/button"
-import makeElement from "./utils/makeElement"
-import Router from "./router/router"
-import reducer from "./redux/reducer"
-import { getStore } from "./redux/store"
+import deleteButton from "./../../components/buttons/deleteButton"
+import button from "./../../components/buttons/button"
+import makeElement from "./../../utils/makeElement"
+import Router from "./../../router/router"
+import reducer from "./../../router/router"
+import { getStore } from "./../../redux/store"
+import styles from "./styles.module.scss"
 
 const cancelButton = button("cancel")
 const deleteBtn = deleteButton()
@@ -33,7 +34,7 @@ const deletePage = function(props){
     
     let headerTemplate = 
     `
-        <header class="delete-header">
+        <header class="${styles.delete}">
             <h1>Delete To Do</h1>
             <div></div>
         </header>

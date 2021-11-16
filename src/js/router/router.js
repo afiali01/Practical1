@@ -1,9 +1,9 @@
-import homePage from "../home";
-import todoPage from "../todoPage";
-import deletePage from "../delete";
-import notFound from "../notFound";
-import editPage from "../edit";
-import addPage from "../add";
+import homePage from "../pages/home";
+import todoPage from "..//pages/todoPage";
+import deletePage from "../pages/delete/delete";
+import notFound from "../pages/notFound";
+import editPage from "../pages/edit/edit";
+import addPage from "../pages/add/add";
 
 const routes = {
     "/": homePage,

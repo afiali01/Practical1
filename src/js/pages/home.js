@@ -1,4 +1,4 @@
-import headerPage from "./components/header/header";
+import headerPage from "./../components/header/header";
 
 const homePage = function(){
     
