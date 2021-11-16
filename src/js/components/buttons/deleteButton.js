@@ -8,8 +8,8 @@ fa-w-14 fa-9x"><path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 
 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 
 16 0 0 0 16-16V48a16 16 0 0 0-16-16z" class=""></path></svg>`
 
-const deleteButton = function(label='delete', className = 'deleteButton'){
-    const template = `<button class="${className}">${label}</button>`
+const deleteButton = function(label='delete', classid = 'deleteButton', id){
+    const template = `<button id="${classid}" data-key="${id}">${label}</button>`
     const element = makeElement(template);
     return element
 }

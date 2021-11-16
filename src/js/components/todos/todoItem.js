@@ -8,47 +8,30 @@ import deleteButton from "../buttons/deleteButton";
 const todoItem = function(data) {
     var edit = editButton()
     var deleteBtn = deleteButton()
-
+    
     //item div
     let item = document.createElement('div')
     item.classList.add('item')
     
-    //data div
-    let dataDiv = document.createElement('div')
-    dataDiv.classList.add('data')
 
-    //extract infomation from data
-    let desc = document.createElement('li')
-    desc.innerHTML = data.title
-    let cat = document.createElement('li')
-    cat.innerHTML = data.category
-    let date = document.createElement('li')
-    date.innerHTML = data.endDate
-    let time = document.createElement('li')
-    time.innerHTML = data.endTime
-    let finished = document.createElement('li')
-    finished.innerHTML = (data.isComplete === false ? "Not Completed" : "Completed")
-
-    if(finished.innerHTML === "Not Completed"){
-        finished.classList.add('not-completed')
-    }else{
-        finished.classList.add('completed')
-    }
-
-
-    dataDiv.appendChild(desc)
-    dataDiv.appendChild(cat)
-    dataDiv.appendChild(date)
-    dataDiv.appendChild(time)
-    dataDiv.appendChild(finished)
+    const template = `
+        <div class="data" data-key="${data.id}">
+                <li>${data.title}</li>
+                <li>${data.category}</li>
+                <li>${data.endDate}</li>
+                <li>${data.endTime}</li>
+                <li>${data.isComplete}</li>
+        </div>
+    `;
 
     //buttons
     const buttons = document.createElement('div')
     buttons.classList.add('buttons')
-    buttons.appendChild(editButton())
-    buttons.appendChild(deleteButton())
+    buttons.appendChild(editButton("edit", "editButton", data.id))
+    buttons.appendChild(deleteButton("delete", "deleteButton", data.id))
 
-    item.appendChild(dataDiv)
+    
+    item.appendChild(makeElement(template))
     item.appendChild(buttons)
     
     return item

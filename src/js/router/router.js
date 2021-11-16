@@ -32,7 +32,7 @@ const Router =  function (pathname, params=null)   {
             app.appendChild(notFound())
         }
         else{
-            app.append(routes[window.location.pathname]())
+            app.append(routes[window.location.pathname](params))
             //app.append(routes[isValidRoute]())
         }
 }
