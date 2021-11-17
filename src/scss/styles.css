@@ -413,23 +413,24 @@ body {
   margin: 0 auto;
 }
 
-svg {
-  padding: 4rem;
-  color: purple;
+#app {
+  background: purple;
+  background: -webkit-gradient(linear, left top, right top, color-stop(35%, purple), to(#00d4ff));
+  background: linear-gradient(90deg, purple 35%, #00d4ff 100%);
+  text-align: center;
+  padding-bottom: 3rem;
 }
 
-#app {
-  text-align: center;
+svg {
+  padding: 4rem;
+  color: #ADFF2F;
 }
 
 h2 {
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 1rem;
-}
-
-.todo-header {
-  background-color: teal;
+  color: #ADFF2F;
 }
 
 .warning h1 {
@@ -439,15 +440,12 @@ h2 {
 }
 
 a {
-  background-color: teal;
   text-decoration: none;
-  color: yellowgreen;
-  padding: 1rem;
-  border-radius: 5px;
+  color: #ADFF2F;
 }
 
 .item {
-  border: 2px solid teal;
+  border: 2px solid #ADFF2F;
   margin: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,6 +454,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1rem;
+  color: #ADFF2F;
 }
 
 .buttons {
@@ -466,8 +465,8 @@ a {
 
 button {
   width: 100%;
-  background-color: purple;
-  color: yellowgreen;
+  background-color: #800080;
+  color: #ADFF2F;
   margin-bottom: 1rem;
 }
 
@@ -481,11 +480,10 @@ button {
 }
 
 .completed {
-  color: green;
+  color: #00FA9A;
 }
 
 .appBar {
-  background: teal;
   padding-top: 1rem;
 }
 

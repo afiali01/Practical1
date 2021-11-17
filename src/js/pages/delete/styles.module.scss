@@ -1,7 +1,9 @@
 .delete{
-    background-color: teal;
+    background: rgb(128,0,128);
+    background: linear-gradient(90deg, rgba(128,0,128,1) 35%, rgba(0,212,255,1) 100%);
     h1{
         font-size: 3rem;
+        color: #ADFF2F;
     }
 
     div{

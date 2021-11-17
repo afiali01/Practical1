@@ -2,6 +2,7 @@ import Router from "./../../router/router"
 import makeElement from "./../../utils/makeElement"
 import button from "./../../components/buttons/button"
 import addComponent from './../../components/buttons/addButton'
+import styles from './styles.module.scss'
 
 const cancelButton = button("cancel")
 const addBtn = addComponent()
@@ -20,14 +21,14 @@ const addPage = function(){
 
 
     let addHeader = `
-        <header>
+        <header class="${styles.addHeader}">
             <h1>Add Todo</h1>
         </header>
     `
 
     let addTemplate = 
     `
-        <form class="">
+        <form class="${styles.add}">
             <div>
                 <label>
                     Title
