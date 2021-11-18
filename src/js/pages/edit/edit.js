@@ -9,7 +9,7 @@ import styles from "./styles.module.scss"
 const cancelButton = button("cancel")
 const saveEditButton = button("save")
 
-const editPage = function({title, category, startDate, startTime, endDate, endTime, isCompleted}){
+const editPage = function({id, title, category, startDate, startTime, endDate, endTime, isCompleted}){
     
     const page = document.createElement('div')
     
@@ -19,7 +19,7 @@ const editPage = function({title, category, startDate, startTime, endDate, endTi
 
     function onSaveEdit(e){
         const object = getStore().find((item)=>{
-            return(item.title === title)
+            return(item.id === id)
         })
         console.log(object)
 
@@ -41,49 +41,53 @@ const editPage = function({title, category, startDate, startTime, endDate, endTi
     `
         <form class="${styles.edit}" method="post">
             <div>
-                <label>
-                    Title
+
+                <div>
+                    <label>Title</label>
                     <input id="title" type="text" value="${title}"/>
-                </label>
+                </div>
 
-                <label>
-                    Category
+                <div>
+                    <label>Category</label>
                     <input id="category" type="text" value="${category}"/>
-                </label>
+                </div>
 
-                <label>
-                    Start Date
+                <div>
+                    <label>Start Date</label>
                     <input  id="startDate" type="text" value="${startDate}"/>
-                </label>
+                </div>
 
-                <label>
-                    Start Time
+                <div>
+                    <label>Start Time </label>
                     <input id="startTime" type="text" value="${startTime}"/>
-                </label>
+                </div>
 
-                <label>
-                    End Date
+                <div>
+                    <label>End Date</label>
                     <input id="endDate" type="text" value="${endDate}"/>
-                </label>
+                </div>
 
-                <label>
-                    End Time
+                <div>
+                    <label>End Time</label>
                     <input id="endTime" type="text" value="${endTime}"/>
-                </label>
+                </div>
 
-                <label>
-                    Complete
-                    <input id="completed" type="checkbox" />
-                </label>
+                <div>
+                    <label>Complete</label>
+                    <input id="completed" type="checkbox" checked="${isCompleted}"/>
+                </div>
             </div>
             <div id="button"></div>
         </form>
     `
     const editTop = makeElement(editHeader)
     const editForm = makeElement(editTemplate)
+    
+    
+
     cancelButton.addEventListener('click', onCancelEdit)
     saveEditButton.addEventListener('click',onSaveEdit)
-    editForm.querySelectorAll('div')[1].append(cancelButton, saveEditButton)
+    editForm.querySelector('#button').append(cancelButton, saveEditButton)
     page.append(editTop)
     page.append(editForm)
 
