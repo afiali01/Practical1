@@ -9,19 +9,19 @@ import styles from "./styles.module.scss"
 const cancelButton = button("cancel")
 const saveEditButton = button("save")
 
-const editPage = function(todoData){
-console.log(todoData)
+const editPage = function({title, category, startDate, startTime, endDate, endTime, isCompleted}){
+    
     const page = document.createElement('div')
-
+    
     function onCancelEdit(e){
         Router('/todopage')
     }
 
     function onSaveEdit(e){
-        // const index = getStore().findIndex((item)=>{
-        //     return(item.id === props.id)
-        // })
-        // console.log(index)
+        const object = getStore().find((item)=>{
+            return(item.title === title)
+        })
+        console.log(object)
 
         // const action = {
         //     type:"edit",
@@ -39,41 +39,41 @@ console.log(todoData)
     `
     let editTemplate = 
     `
-        <form class="${styles.edit}">
+        <form class="${styles.edit}" method="post">
             <div>
                 <label>
                     Title
-                    <input type="text"/>
+                    <input id="title" type="text" value="${title}"/>
                 </label>
 
                 <label>
                     Category
-                    <input type="text"/>
+                    <input id="category" type="text" value="${category}"/>
                 </label>
 
                 <label>
                     Start Date
-                    <input type="date"/>
+                    <input  id="startDate" type="text" value="${startDate}"/>
                 </label>
 
                 <label>
                     Start Time
-                    <input type="text"/>
+                    <input id="startTime" type="text" value="${startTime}"/>
                 </label>
 
                 <label>
                     End Date
-                    <input type="date"/>
+                    <input id="endDate" type="text" value="${endDate}"/>
                 </label>
 
                 <label>
                     End Time
-                    <input type="text"/>
+                    <input id="endTime" type="text" value="${endTime}"/>
                 </label>
 
                 <label>
                     Complete
-                    <input type="checkbox"/>
+                    <input id="completed" type="checkbox" />
                 </label>
             </div>
             <div id="button"></div>
@@ -86,6 +86,7 @@ console.log(todoData)
     editForm.querySelectorAll('div')[1].append(cancelButton, saveEditButton)
     page.append(editTop)
     page.append(editForm)
+
 
     return page
 }

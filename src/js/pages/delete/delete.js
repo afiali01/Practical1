@@ -10,7 +10,7 @@ const cancelButton = button("cancel")
 const deleteBtn = deleteButton()
 
 const deletePage = function(props){
-    console.log(props)
+
     const page = document.createElement('div')
     
     function onCancelDelete(e){

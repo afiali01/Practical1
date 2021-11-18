@@ -21,15 +21,10 @@ const todoList = function(){
     function onEditTodo(e){
         const id = e.currentTarget.dataset.key
         const todoObject = data.find(todo => todo.id === id)
-        Router('/editpage',todoObject)
+        
+        Router('/editpage', todoObject)
     }
     
-
-    //append child into list
-    // for(let i=0; i<data.length;i++){
-    //     todoItem(data[i]).querySelector('.deleteButton').addEventListener('click', onDeleteToDo)
-    //     list.appendChild(todoItem(data[i]))
-    // }
     
     if(data !== null){
         const elements = data.map(elm => todoItem(elm))
