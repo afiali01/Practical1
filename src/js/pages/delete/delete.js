@@ -10,9 +10,10 @@ const cancelButton = button("cancel")
 const deleteBtn = deleteButton()
 
 const deletePage = function(props){
-
+    console.log(props)
     const page = document.createElement('div')
-    
+    const data = getStore()
+    const item = data.find(todo => todo.id === props.id)
     function onCancelDelete(e){
         Router('/todopage')
     }
@@ -39,12 +40,31 @@ const deletePage = function(props){
             <div></div>
         </header>
     `
+
+    let itemTemplate = 
+    `
+        <div class="${styles.data}" data-key="${item.id}">
+            <li>${item.title}</li>
+            <li>${item.category}</li>
+            <li>${item.endDate}</li>
+            <li>${item.endTime}</li>
+            <li>${(item.isComplete == true ? "Complete": "Not Completed")}</li>
+        </div>
+    `
     const pageHeader = makeElement(headerTemplate)
+    const itemDisplay = makeElement(itemTemplate)
     cancelButton.addEventListener('click', onCancelDelete)
     deleteBtn.addEventListener('click',onDeleteToDo)
     pageHeader.querySelector('div').append(cancelButton, deleteBtn)
     page.append(pageHeader)
+    page.append(itemDisplay)
 
+    if(item.isComplete === true){
+        itemDisplay.querySelectorAll('li')[4].classList.add('completed')
+    }
+    else{
+        itemDisplay.querySelectorAll('li')[4].classList.add('not-completed')
+    }
     return page
 }
 

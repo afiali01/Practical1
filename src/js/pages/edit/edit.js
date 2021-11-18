@@ -12,24 +12,22 @@ const saveEditButton = button("save")
 const editPage = function({id, title, category, startDate, startTime, endDate, endTime, isComplete}){
     
     const page = document.createElement('div')
-    console.log(isComplete)
     function onCancelEdit(e){
         Router('/todopage')
     }
 
     function onSaveEdit(e){
-        const object = getStore().find((item)=>{
-            return(item.id === id)
-        })
+        const data = getStore()
+        const object = data.find(item => item.id === id)
         console.log(object)
 
-        // const action = {
-        //     type:"edit",
-        //     payload:{index},
-        //     cb:()=> Router('/todopage')
-        // }
+        const action = {
+            type:"edit",
+            payload:{object},
+            cb:()=> Router('/todopage')
+        }
 
-        // reducer(action)
+        reducer(action)
     }
 
     let editHeader = `

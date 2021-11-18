@@ -21,7 +21,7 @@ const todoItem = function(data) {
                 <li>${data.category}</li>
                 <li>${data.endDate}</li>
                 <li>${data.endTime}</li>
-                <li>${(data.isComplete == true ? "Complete": "Not Completed")}
+                <li>${(data.isComplete == true ? "Complete": "Not Completed")}</li>
         </div>
     `;
 

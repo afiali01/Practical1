@@ -1,3 +1,4 @@
+import { get } from 'lodash';
 import {getStore, updateStore} from './store'
 
 function reducer(action){
@@ -9,7 +10,9 @@ function reducer(action){
             updateStore(newStore)
             action.cb()
         case "edit":
-            return "edit employee";
+            const oldStore = getStore();
+            const  object = action.payload.object;
+            //const updateStore = 
         case "add":
             return "add new employee";
         default: return store
