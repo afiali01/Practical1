@@ -9,10 +9,10 @@ import styles from "./styles.module.scss"
 const cancelButton = button("cancel")
 const saveEditButton = button("save")
 
-const editPage = function({id, title, category, startDate, startTime, endDate, endTime, isCompleted}){
+const editPage = function({id, title, category, startDate, startTime, endDate, endTime, isComplete}){
     
     const page = document.createElement('div')
-    
+    console.log(isComplete)
     function onCancelEdit(e){
         Router('/todopage')
     }
@@ -74,7 +74,7 @@ const editPage = function({id, title, category, startDate, startTime, endDate, e
 
                 <div>
                     <label>Complete</label>
-                    <input id="completed" type="checkbox" checked="${isCompleted}"/>
+                    <input id="completed" type="checkbox"/>
                 </div>
             </div>
             <div id="button"></div>
@@ -82,7 +82,7 @@ const editPage = function({id, title, category, startDate, startTime, endDate, e
     `
     const editTop = makeElement(editHeader)
     const editForm = makeElement(editTemplate)
-    
+    editForm.querySelector('#completed').checked = isComplete
     
 
     cancelButton.addEventListener('click', onCancelEdit)
