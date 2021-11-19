@@ -16,24 +16,22 @@ const addPage = function(){
     }
 
     function onAddTodo(e){
-        const newTodo = {
-            title: document.getElementById('title').value,
-            category: document.getElementById('category').value,
-            startDate: document.getElementById('startDate').value,
-            startTime: document.getElementById('startTime').value,
-            endDate: document.getElementById('endDate').value,
-            endTime: document.getElementById('endTime').value,
-            isComplete: (document.getElementById('completed').checked ? true : false)
-        }
-        console.log(newTodo)
+        const newTitle = document.getElementById('title').value
+        const newCategory = document.getElementById('category').value
+        const newStartDate = document.getElementById('startDate').value
+        const newStartTime = document.getElementById('startTime').value
+        const newEndDate = document.getElementById('endDate').value
+        const newEndTime = document.getElementById('endTime').value
+        const newIsComplete = (document.getElementById('completed').checked ? true : false)
+        
+        
         const action = {
             type: "add",
-            payload: {newTodo},
+            payload: {newTitle, newCategory, newStartDate, newStartTime, newEndDate, newEndTime, newIsComplete},
             cb:()=>Router('/todopage')
         }
 
         reducer(action)
-        
     }
 
 

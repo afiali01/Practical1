@@ -19,7 +19,10 @@ const editPage = function(props){
     function onSaveEdit(e){
         const data = getStore()
         const object = data.find(x => x.id === props.id)
-        console.log(object)
+        const index = getStore().findIndex((item)=>{
+            return(item.id === props.id)
+        })
+        
         object.title = document.getElementById('title').value
         object.category = document.getElementById('category').value
         object.startDate = document.getElementById('startDate').value
@@ -35,7 +38,7 @@ const editPage = function(props){
 
         const action = {
             type:"edit",
-            payload: object,
+            payload: {object, index},
             cb:() => Router('/todopage')
         }
 

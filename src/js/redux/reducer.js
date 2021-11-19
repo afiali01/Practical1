@@ -12,20 +12,16 @@ function reducer(action){
         case "edit":
             const oldStore = getStore();
             const updatedTodo = action.payload.object;
-            const updateindex = getStore().findIndex((item) => {
-                return (item.id === object.id)
-            });
-            const updated = oldStore.splice(updateindex, 1, updatedTodo)
+            const updateindex = action.payload.index;
+            const updated = [...oldStore.slice(0, index), ...store.slice()]
             updateStore(updated)
             action.cb()
         case "add":
             const oldList = getStore();
-            const newitem = action.payload.newTodo;
-            const update = oldList.splice(0,0, newitem)
+            const newitem = action.payload
+            const update = [...oldList, newitem]
             updateStore(update)
             action.cb()
-        default: return store
-        
     }
 }
 

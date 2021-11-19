@@ -21,7 +21,6 @@ const deletePage = function(props){
         const index = getStore().findIndex((item)=>{
             return(item.id === props.id)
         })
-        console.log(index)
 
         const action = {
             type:"delete",
