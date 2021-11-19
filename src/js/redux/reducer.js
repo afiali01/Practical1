@@ -19,7 +19,11 @@ function reducer(action){
             updateStore(updated)
             action.cb()
         case "add":
-            return "add new todo";
+            const oldList = getStore();
+            const newitem = action.payload.newTodo;
+            const update = oldList.splice(0,0, newitem)
+            updateStore(update)
+            action.cb()
         default: return store
         
     }

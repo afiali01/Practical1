@@ -19,7 +19,19 @@ const editPage = function(props){
     function onSaveEdit(e){
         const data = getStore()
         const object = data.find(x => x.id === props.id)
-
+        console.log(object)
+        object.title = document.getElementById('title').value
+        object.category = document.getElementById('category').value
+        object.startDate = document.getElementById('startDate').value
+        object.startTime = document.getElementById('startTime').value
+        object.endDate = document.getElementById('endDate').value
+        object.endTime = document.getElementById('endTime').value
+        if(document.getElementById('completed').checked){
+            object.isComplete = true
+        }
+        else{
+            object.isComplete = false
+        }
 
         const action = {
             type:"edit",

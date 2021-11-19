@@ -3,6 +3,7 @@ import makeElement from "./../../utils/makeElement"
 import button from "./../../components/buttons/button"
 import addComponent from './../../components/buttons/addButton'
 import styles from './styles.module.scss'
+import reducer from "../../redux/reducer"
 
 const cancelButton = button("cancel")
 const addBtn = addComponent()
@@ -15,14 +16,24 @@ const addPage = function(){
     }
 
     function onAddTodo(e){
-        const object = document.querySelector('#title').Value
-        console.log(object)
-
+        const newTodo = {
+            title: document.getElementById('title').value,
+            category: document.getElementById('category').value,
+            startDate: document.getElementById('startDate').value,
+            startTime: document.getElementById('startTime').value,
+            endDate: document.getElementById('endDate').value,
+            endTime: document.getElementById('endTime').value,
+            isComplete: (document.getElementById('completed').checked ? true : false)
+        }
+        console.log(newTodo)
         const action = {
             type: "add",
-            payload: "",
+            payload: {newTodo},
             cb:()=>Router('/todopage')
         }
+
+        reducer(action)
+        
     }
 
 
@@ -35,7 +46,7 @@ const addPage = function(){
 
     let addTemplate = 
     `
-        <form class="${styles.add}" method="get" action="">
+        <form class="${styles.add}" method="post" action="">
             <div>
 
                 <div>
