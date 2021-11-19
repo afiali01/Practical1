@@ -15,7 +15,14 @@ const addPage = function(){
     }
 
     function onAddTodo(e){
+        const object = document.querySelector('#title').Value
+        console.log(object)
 
+        const action = {
+            type: "add",
+            payload: "",
+            cb:()=>Router('/todopage')
+        }
     }
 
 
@@ -28,44 +35,45 @@ const addPage = function(){
 
     let addTemplate = 
     `
-        <form class="${styles.add}">
+        <form class="${styles.add}" method="get" action="">
             <div>
-                <label>
-                    Title
-                    <input type="text"/>
-                </label>
 
-                <label>
-                    Category
-                    <input type="text"/>
-                </label>
+                <div>
+                    <label>Title</label>
+                    <input id="title" type="text"/>
+                </div>
 
-                <label>
-                    Start Date
-                    <input type="date"/>
-                </label>
+                <div>
+                    <label>Category</label>
+                    <input id="category" type="text" />
+                </div>
 
-                <label>
-                    Start Time
-                    <input type="text"/>
-                </label>
+                <div>
+                    <label>Start Date</label>
+                    <input  id="startDate" type="text" />
+                </div>
 
-                <label>
-                    End Date
-                    <input type="date"/>
-                </label>
+                <div>
+                    <label>Start Time </label>
+                    <input id="startTime" type="text" />
+                </div>
 
-                <label>
-                    End Time
-                    <input type="text"/>
-                </label>
+                <div>
+                    <label>End Date</label>
+                    <input id="endDate" type="text" />
+                </div>
 
-                <label>
-                    Complete
-                    <input type="checkbox"/>
-                </label>
+                <div>
+                    <label>End Time</label>
+                    <input id="endTime" type="text" />
+                </div>
+
+                <div>
+                    <label>Complete</label>
+                    <input id="completed" type="checkbox"/>
+                </div>
             </div>
-        <div id="button"></div>
+            <div id="button"></div>
         </form>
     `
 
@@ -73,7 +81,7 @@ const addPage = function(){
     const addForm = makeElement(addTemplate)
     cancelButton.addEventListener('click', onCancelAdd)
     addBtn.addEventListener('click', onAddTodo)
-    addForm.querySelectorAll('div')[1].append(cancelButton, addBtn)
+    addForm.querySelector('#button').append(cancelButton, addBtn)
     page.append(addTop)
     page.append(addForm)
 

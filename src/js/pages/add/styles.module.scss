@@ -8,23 +8,23 @@
 }
 
 .add{
-
     color: #ADFF2F;
     padding: 1rem;
     background: rgb(128,0,128);
     background: linear-gradient(90deg, rgba(128,0,128,1) 35%, rgba(0,212,255,1) 100%);
 
-    div:last-child{
-        display: flex;
-    }
     button{
         margin: 1rem;
     }
 
-    label{
+    div>div{
         display: flex;
         justify-content: space-between;
         margin: 1rem;
+    }
+
+    div:last-child{
+        display: flex;
     }
 
     input{

@@ -9,25 +9,17 @@ import styles from "./styles.module.scss"
 const cancelButton = button("cancel")
 const saveEditButton = button("save")
 
-const editPage = function({category, title, isComplete, id, startDate, startTime, endDate, endTime}){
-
+const editPage = function(props){
     const page = document.createElement('div')
+
     function onCancelEdit(e){
         Router('/todopage')
     }
 
     function onSaveEdit(e){
         const data = getStore()
-        const object = data.find(item => item.id === prop.id)
-        console.log(object)
-        object.title  = editForm.querySelector('#title').innerHTML
-        object.category = editForm.querySelector('#category').innerHTML
-        object.startDate = editForm.querySelector('#startDate').innerHTML
-        object.startTime = editForm.querySelector('#startTime').innerHTML
-        object.endDate = editForm.querySelector('#endDate').innerHTML
-        object.endTime = editForm.querySelector('#endTime').innerHTML
-        object.isComplete = editForm.querySelector('#completed').innerHTML
-        console.log(object)
+        const object = data.find(x => x.id === props.id)
+
 
         const action = {
             type:"edit",
@@ -50,32 +42,32 @@ const editPage = function({category, title, isComplete, id, startDate, startTime
 
                 <div>
                     <label>Title</label>
-                    <input id="title" type="text" value="${title}"/>
+                    <input id="title" type="text" value="${props.title}"/>
                 </div>
 
                 <div>
                     <label>Category</label>
-                    <input id="category" type="text" value="${category}"/>
+                    <input id="category" type="text" value="${props.category}"/>
                 </div>
 
                 <div>
                     <label>Start Date</label>
-                    <input  id="startDate" type="text" value="${startDate}"/>
+                    <input  id="startDate" type="text" value="${props.startDate}"/>
                 </div>
 
                 <div>
                     <label>Start Time </label>
-                    <input id="startTime" type="text" value="${startTime}"/>
+                    <input id="startTime" type="text" value="${props.startTime}"/>
                 </div>
 
                 <div>
                     <label>End Date</label>
-                    <input id="endDate" type="text" value="${endDate}"/>
+                    <input id="endDate" type="text" value="${props.endDate}"/>
                 </div>
 
                 <div>
                     <label>End Time</label>
-                    <input id="endTime" type="text" value="${endTime}"/>
+                    <input id="endTime" type="text" value="${props.endTime}"/>
                 </div>
 
                 <div>
@@ -88,7 +80,7 @@ const editPage = function({category, title, isComplete, id, startDate, startTime
     `
     const editTop = makeElement(editHeader)
     const editForm = makeElement(editTemplate)
-    editForm.querySelector('#completed').checked = isComplete
+    editForm.querySelector('#completed').checked = props.isComplete
     
     cancelButton.addEventListener('click', onCancelEdit)
     saveEditButton.addEventListener('click',onSaveEdit)
