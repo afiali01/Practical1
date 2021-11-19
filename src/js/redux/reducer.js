@@ -11,10 +11,15 @@ function reducer(action){
             action.cb()
         case "edit":
             const oldStore = getStore();
-            const  object = action.payload.object;
-            //const updateStore = 
+            const updatedTodo = action.payload.object;
+            const updateindex = getStore().findIndex((item) => {
+                return (item.id === object.id)
+            });
+            const updated = oldStore.splice(updateindex, 1, updatedTodo)
+            updateStore(updated)
+            action.cb()
         case "add":
-            return "add new employee";
+            return "add new todo";
         default: return store
         
     }

@@ -12,9 +12,9 @@ const todoList = function(){
     const list = document.createElement('div')
     list.classList.add('list-items')
     const data = getStore()
-
     function onDeleteToDo (e){
         const todoID = {id:e.currentTarget.dataset.key}
+
         Router('/deletepage', todoID)
     }
 

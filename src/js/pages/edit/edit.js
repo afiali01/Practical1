@@ -9,8 +9,8 @@ import styles from "./styles.module.scss"
 const cancelButton = button("cancel")
 const saveEditButton = button("save")
 
-const editPage = function({id, title, category, startDate, startTime, endDate, endTime, isComplete}){
-    
+const editPage = function({category, title, isComplete, id, startDate, startTime, endDate, endTime}){
+
     const page = document.createElement('div')
     function onCancelEdit(e){
         Router('/todopage')
@@ -18,13 +18,21 @@ const editPage = function({id, title, category, startDate, startTime, endDate, e
 
     function onSaveEdit(e){
         const data = getStore()
-        const object = data.find(item => item.id === id)
+        const object = data.find(item => item.id === prop.id)
+        console.log(object)
+        object.title  = editForm.querySelector('#title').innerHTML
+        object.category = editForm.querySelector('#category').innerHTML
+        object.startDate = editForm.querySelector('#startDate').innerHTML
+        object.startTime = editForm.querySelector('#startTime').innerHTML
+        object.endDate = editForm.querySelector('#endDate').innerHTML
+        object.endTime = editForm.querySelector('#endTime').innerHTML
+        object.isComplete = editForm.querySelector('#completed').innerHTML
         console.log(object)
 
         const action = {
             type:"edit",
-            payload:{object},
-            cb:()=> Router('/todopage')
+            payload: object,
+            cb:() => Router('/todopage')
         }
 
         reducer(action)
@@ -37,7 +45,7 @@ const editPage = function({id, title, category, startDate, startTime, endDate, e
     `
     let editTemplate = 
     `
-        <form class="${styles.edit}" method="post">
+        <form class="${styles.edit}" method="get" action="">
             <div>
 
                 <div>
@@ -82,7 +90,6 @@ const editPage = function({id, title, category, startDate, startTime, endDate, e
     const editForm = makeElement(editTemplate)
     editForm.querySelector('#completed').checked = isComplete
     
-
     cancelButton.addEventListener('click', onCancelEdit)
     saveEditButton.addEventListener('click',onSaveEdit)
     editForm.querySelector('#button').append(cancelButton, saveEditButton)

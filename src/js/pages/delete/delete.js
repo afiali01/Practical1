@@ -10,7 +10,6 @@ const cancelButton = button("cancel")
 const deleteBtn = deleteButton()
 
 const deletePage = function(props){
-    console.log(props)
     const page = document.createElement('div')
     const data = getStore()
     const item = data.find(todo => todo.id === props.id)
