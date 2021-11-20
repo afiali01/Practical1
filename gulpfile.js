@@ -1,17 +1,15 @@
-const {src, dest, series} = require('gulp')
+const {src, dest} = require('gulp')
 
 function copy (cb) {
 
-    // place code for your default task here
+// place code for your default task here
 
-    src('./src/static/data/**')
+src('./src/static/data/*.*')
 
-    .pipe(dest('./dist/data/'))
+.pipe(dest('./dist/data/'))
 
-    function redirects(){
-        return(src('./_redirects').pipe(dest('./dist')))
-    }
+cb();
 
 }
 
-exports.default = series(static, redirect)
+exports.default = copy
