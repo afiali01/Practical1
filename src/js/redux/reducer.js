@@ -9,19 +9,22 @@ function reducer(action){
             const newStore = [...store.slice(0, index), ...store.slice(index+1)]
             updateStore(newStore)
             action.cb()
+            
         case "edit":
             const oldStore = getStore();
             const updatedTodo = action.payload.object;
             const updateindex = action.payload.index;
-            const updated = [...oldStore.slice(0, index), ...store.slice()]
+            const updated = [...oldStore.slice(0, index), updatedTodo,  ...store.slice(index +1)]
             updateStore(updated)
             action.cb()
+            
         case "add":
             const oldList = getStore();
-            const newitem = action.payload
+            const newitem = action.payload.object
             const update = [...oldList, newitem]
             updateStore(update)
             action.cb()
+            
     }
 }
 

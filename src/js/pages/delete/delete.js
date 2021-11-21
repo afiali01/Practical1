@@ -18,10 +18,12 @@ const deletePage = function(props){
     }
 
     function onDeleteToDo(e){
+        
+        
+
         const index = getStore().findIndex((item)=>{
             return(item.id === props.id)
         })
-
         const action = {
             type:"delete",
             payload:{index},
